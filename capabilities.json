@@ -19,49 +19,8 @@
     "username": "<saucelabs_username>",
     "accessKey": "<saucelabs_access_key>"
   },
-  "androidLocal": {
-    "platformName": "android",
-    "automationName": "uiautomator2",
-    "app": "./vendor/<android_apk_file_name>.apk",
-    "deviceName": "<enter_device_name>",
-    "udid": "<enter_device_udid>",
-    "appPackage": "<app_package>",
-    "appWaitActivity": "<app_package>",
-    "fullReset": false
-  },
-  "androidBrowserstack": {
-    "platformName": "Android",
-    "automationName": "UIAutomator2",
-    "build": "<browserstack_build_name>",
-    "name": "<browserstack_run_name>",
-    "device": "<browserstack_device>",
-    "os_version": "<browserstack_os_version>",
-    "browserstack.user": "<browserstack_user>",
-    "browserstack.key": "<browserstack_key>",
-    "app": "<browserstack_app_url>",
-    "browserstack.debug": true
-  },
-  "iosLocal": {
-    "platformName": "iOS",
-    "automationName": "xcuitest",
-    "app": "./vendor/TestApp-iphonesimulator.app",
-    "deviceName": "<enter_device_name>",
-    "udid": "<enter_device_udid>",
-    "xcodeOrgId": "<enter_developer_organization_id>",
-    "xcodeSigningId": "<enter_developer_signing_id>",
-    "updatedWDABundleId": "<enter_web_driver_agent_id>",
-    "noReset": false
-  },
-  "iosBrowserstack": {
-    "platformName": "iOS",
-    "automationName": "xcuitest",
-    "build": "<browserstack_build_name>",
-    "name": "<browserstack_run_name>",
-    "device": "<browserstack_device>",
-    "os_version": "<browserstack_os_version>",
-    "browserstack.user": "<browserstack_user>",
-    "browserstack.key": "<browserstack_key>",
-    "app": "<browserstack_app_url>",
-    "browserstack.debug": true
+  "firefoxLocal": {
+    "maxInstances": 1,
+    "browserName": "firefox"
   }
 }
