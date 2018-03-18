@@ -57,3 +57,13 @@ typings/
 # dotenv environment variables file
 .env
 
+# app files
+.ipa
+.apk
+
+# result files 
+/results
+
+# log files 
+/logs
+

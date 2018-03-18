@@ -1,0 +1,56 @@
+{
+  "name": "webdriverio-seed",
+  "version": "0.0.1",
+  "description": "A boilerplate WebDriverIO project that supports web and mobile app test automation out-of-the-box.",
+  "author": "Andrew Birkholz",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abirkholz/webdriverio-seed.git"
+  },
+  "devDependencies": {
+    "appium": "^1.7.2",
+    "babel-register": "^6.26.0",
+    "better-npm-run": "^0.1.0",
+    "chai": "4.1.2",
+    "commander": "^2.13.0",
+    "cucumber": "3.1.0",
+    "eslint": "^4.10.0",
+    "fs-find": "0.4.0",
+    "wdio-appium-service": "^0.2.3",
+    "wdio-cucumber-framework": "^1.0.2",
+    "wdio-junit-reporter": "^0.3.1",
+    "wdio-selenium-standalone-service": "0.0.9",
+    "wdio-spec-reporter": "0.1.2",
+    "webdriverio": "^4.12.0"
+  },
+  "scripts": {
+    "test": "bnr chromeLocal -s",
+    "test:chrome:local": "bnr chromeLocal -s",
+    "test:android:local": "bnr androidLocal -s",
+    "ios:ios:local": "bnr iosLocal -s"
+  },
+  "betterScripts": {
+    "chromeLocal": {
+      "command": "wdio wdio.web.conf.js --host localhost",
+      "description": "Chrome on local machine",
+      "env": {
+        "CAPABILITY": "chromeLocal"
+      }
+    },
+    "androidLocal": {
+      "command": "wdio wdio.android.conf.js",
+      "description": "Android on local machine via simulator",
+      "env": {
+        "CAPABILITY": "androidLocal"
+      }
+    },
+    "iosLocal": {
+      "command": "wdio wdio.ios.conf.js",
+      "description": "iOS on local machine via simulator",
+      "env": {
+        "CAPABILITY": "iosLocal"
+      }
+    }
+  }
+}
