@@ -67,3 +67,6 @@ typings/
 # log files 
 /logs
 
+# lock
+package-lock.json*
+
