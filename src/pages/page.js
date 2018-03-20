@@ -1,22 +1,23 @@
-const HomePage = require("./home.page");
-const LoginPage = require("./login.page");
 
 class Page {
-  
   constructor() {
-    this.pageTrait = "";
+    title: "";
+    url: "";
+    pageObjects: "";
   }
 
-  get(pageName) {
-    switch (pageName.toUpperCase()) {
-      case "HOME":
-        return HomePage; 
-      case "LOGIN":
-        return LoginPage;
-      default:
-        break;
-    }
+  getElement(element, pageObjects) {
+    let result = null;
+
+    pageObjects.forEach(obj => {
+      if (String(obj.name.toUpperCase()) === element.toUpperCase()) {
+        result = String(obj.id);
+        return;
+      }
+    });
+
+    return result;
   }
 }
 
-module.exports = new Page();
+export default Page;

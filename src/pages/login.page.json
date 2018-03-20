@@ -1,0 +1,6 @@
+[
+  { "name": "LOGIN_BUTTON", "id": "input[value='login']" },
+  { "name": "USERNAME_INPUT", "id": "input[name='acct']" },
+  { "name": "PASSWORD_INPUT", "id": "input[name='pw']" },
+  { "name": "FORGOT_PASSWORD_LINK", "id": "a[href='forgot']" }
+]

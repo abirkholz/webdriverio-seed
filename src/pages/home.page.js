@@ -1,20 +1,19 @@
-class HomePage {
+import Page from "./page";
+const homePageObjects = require("./home.page.json");
+
+class HomePage extends Page {
+
   constructor() {
-    this.title = `Hacker News`;
-    this.url = `https://news.ycombinator.com`;
-    this.pageTrait = `#hnmain`;
-    this.loginLink = `a[href="login?goto=news"]`;
+    super();
+    this.title = "Home";
+    this.url = "http://news.ycombinator.com";
+    this.pageObjects = homePageObjects;
   }
 
   getElement(element) {
-    switch (element.toUpperCase()) {
-      case "LOGIN LINK":
-        return this.loginLink;
-      default:
-        console.log("Element not found in HomePage.getElement()");
-        break;
-    }
+    return super.getElement(element, this.pageObjects);
   }
-}
+};
 
-module.exports = new HomePage();
+// Create new instance, always
+export default new HomePage();
