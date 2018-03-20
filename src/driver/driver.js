@@ -151,4 +151,4 @@ class Driver {
   }
 }
 
-module.exports = new Driver();
+export default new Driver();

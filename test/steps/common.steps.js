@@ -1,28 +1,32 @@
-const { Given, When, Then } = require("cucumber");
-
-const Driver = require("../../src/driver/driver");
-const Page = require("../../src/pages/page");
+import { Given, When, Then } from "cucumber";
+import Utility from "../../src/utility/utility";
+import Driver from "../../src/driver/driver";
+import LoginPage from "../../src/pages/login.page";
+import HomePage from "../../src/pages/home.page";
 
 /**
  * Common Steps
  */
 
 Given(/^I am on the "(.*?)" page$/, pageName => {
-  const p = Page.get(pageName);
-  Driver.loadUrl(p.url);
-  Driver.shouldHaveTitle(p.title);
+  const Page = Utility.getPage(pageName);
+  Driver.loadUrl(Page.url);
 });
 
 When(/^I click the "(.*?)" on the "(.*?)" page$/, (element, pageName) => {
-  Driver.clickOnElement(Page.get(pageName).getElement(element));
+  const Page = Utility.getPage(pageName);
+  Driver.shouldSeeElement(Page.getElement(element));
+  Driver.clickOnElement(Page.getElement(element));
 });
 
 Then(/^I should see the "(.*?)" on the "(.*?)" page$/, (element, pageName) => {
-  Driver.shouldSeeElement(Page.get(pageName).getElement(element));
+  const Page = Utility.getPage(pageName);
+  Driver.shouldSeeElement(Page.getElement(element));
 });
 
 When(/^I enter "(.*?)" into the "(.*?)" on the "(.*?)" page$/,
   (value, element, pageName) => {
-    Driver.fillElementWithText(Page.get(pageName).getElement(element), value);
+    const Page = Utility.getPage(pageName);
+    Driver.fillElementWithText(Page.getElement(element), value);
   }
 );

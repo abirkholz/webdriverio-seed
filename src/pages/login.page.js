@@ -1,28 +1,19 @@
-class LoginPage {
+import Page from "./page";
+const loginPageObjects = require("./login.page.json");
+
+class LoginPage extends Page {
+
   constructor() {
-    this.pageTitle = `Hacker News`;
-    this.url = `https://news.ycombinator.com/login?goto=news`;
-  
-    this.pageTrait = `input[value="login"]`;
-    this.loginButton = `input[value="login"]`;
-    this.loginUsernameInput = `input[name="acct"]`;
-    this.loginPasswordInput = `input[name="pw"]`;
-    this.forgotPassworLink = `a[href="forgot"]`;
+    super();
+    this.title = "Login";
+    this.url = "http://localhost:3000";
+    this.pageObjects =  loginPageObjects;
   }
 
   getElement(element) {
-    switch (element.toUpperCase()) {
-      case "LOGIN BUTTON":
-        return this.loginButton;
-      case "USERNAME INPUT":
-        return this.loginUsernameInput;
-      case "PASSWORD INPUT":
-        return this.loginPasswordInput;
-      default:
-        console.log("Element not found in LoginPage.getElement()");
-        return null;
-    }
+    return super.getElement(element, this.pageObjects);
   }
-}
+};
 
-module.exports = new LoginPage();
+// Create new instance, always
+export default new LoginPage();
