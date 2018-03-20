@@ -1,5 +1,5 @@
 # webdriverio-seed
-A boilerplate WebDriverIO project that supports web and mobile app test automation out-of-the-box.  
+A boilerplate WebDriverIO project that supports web and mobile app test automation out-of-the-box. The framework implements a keyword-driven page object pattern, which makes adding page objects as simple as placing two strings in a JSON file and filling in a Cucumber step.
 
 ## Getting Started
 Add the following tools to your environment:
