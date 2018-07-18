@@ -109,7 +109,7 @@ class Driver {
 
   waitForElementNotToExist(element) {
     browser.waitForExist(element); // Wait for element to exist
-    browser.waitForExist(element, 120000, false); // Now wait for it to NOT exist (2 mins)
+    browser.waitForExist(element, 120000, true); // Now wait for it to NOT exist (2 mins)
   }
 
   /**
